@@ -18,12 +18,19 @@ import {MatBadgeModule} from '@angular/material/badge';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatListModule} from '@angular/material/list';
 import { FlexLayoutModule } from "@angular/flex-layout";
+import { CartComponent } from './cart/cart.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { FilterComponent } from './filter/filter.component';
+import {MatGridListModule} from '@angular/material/grid-list'; 
 
 
 
 @NgModule({
   declarations: [
-    TreeRexStoreComponent
+    TreeRexStoreComponent,
+    CartComponent,
+    ProductListComponent,
+    FilterComponent
   ],
   imports: [
     CommonModule,
@@ -43,9 +50,9 @@ import { FlexLayoutModule } from "@angular/flex-layout";
     MatSnackBarModule,
     BrowserAnimationsModule,
     MatListModule,
-    FlexLayoutModule
-
-    
-  ]
+    FlexLayoutModule,
+    MatGridListModule    
+  ],
+  exports:[FilterComponent]
 })
 export class TreeRexStoreModule { }

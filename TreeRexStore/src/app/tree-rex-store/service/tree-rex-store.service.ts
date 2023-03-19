@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class TreeRexStoreService {
+  [x: string]: any;
 
   constructor(private http: HttpClient) { }
 

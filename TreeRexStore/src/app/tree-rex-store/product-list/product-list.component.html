@@ -1,0 +1,24 @@
+<div fxFlex>
+    <div fxFlex fxLayout="row wrap" fxLayoutGap="20px grid">
+        <div *ngFor="let item of productList" fxFlex="20">
+            <mat-card>
+                <mat-card-content class="p">
+                    <img src={{item.imageURL}}>
+                    <b>{{item.name}}</b>
+                </mat-card-content>
+                <mat-card-footer>
+                    <mat-card-actions fxLayoutAlign="space-between center">
+                        <div class="pl"><b>{{item.price|currency:"INR":"symbol"}}</b></div>
+                        <div>
+                            <button mat-raised-button color="primary" (click)="cart(item)">
+                                Add to cart
+                            </button>
+                        </div>
+                    </mat-card-actions>
+                </mat-card-footer>
+            </mat-card>
+        </div>
+    </div>
+
+
+</div>

@@ -1,3 +1,4 @@
+import { TreeRexStoreModule } from './tree-rex-store/tree-rex-store.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -8,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
+
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import {MatBadgeModule} from '@angular/material/badge';
     HttpClientModule,
     MatIconModule,
     MatTooltipModule,
-    MatBadgeModule
+    MatBadgeModule,
+    TreeRexStoreModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
