@@ -4,6 +4,8 @@
   display: flex;
   margin: 100px 24px 100px 16px;
 }
-.filter{
-    margin: 100px 16px 100px 24px;
+.filter {
+  margin: 100px 16px 100px 24px;
+  position: fixed !important;
+  z-index: 10;
 }

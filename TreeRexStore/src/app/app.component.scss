@@ -2,4 +2,8 @@
   margin: -8px !important;
   display: flex;
   height: 72px !important;
+  position: fixed !important;
+  z-index: 10;
+  width: 100% !important;
+  background:rgba(252, 252, 252, 1) !important;
 }
