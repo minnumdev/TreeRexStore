@@ -3,9 +3,13 @@
   box-sizing: border-box;
   display: flex;
   margin: 100px 24px 100px 16px;
+  top:72px !important;
+  position: absolute;
 }
 .filter {
   margin: 100px 16px 100px 24px;
   position: fixed !important;
   z-index: 10;
+  top:72px !important;
+  width: 17%;
 }

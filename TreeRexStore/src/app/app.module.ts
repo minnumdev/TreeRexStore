@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatIconModule} from '@angular/material/icon';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
+import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 
 @NgModule({
@@ -23,7 +25,10 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatIconModule,
     MatTooltipModule,
     MatBadgeModule,
-    TreeRexStoreModule
+    TreeRexStoreModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule
 
   ],
   providers: [],

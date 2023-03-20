@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class TreeRexStoreService {
-  [x: string]: any;
-
+  
+  public search = new BehaviorSubject<any>('');
   constructor(private http: HttpClient) { }
 
   public getItemList(): Observable<any> {
