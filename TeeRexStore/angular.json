@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "TreeRexStore": {
+    "TeeRexStore": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/tree-rex-store",
+            "outputPath": "dist/tee-rex-store",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -65,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "TreeRexStore:build:production"
+              "browserTarget": "TeeRexStore:build:production"
             },
             "development": {
-              "browserTarget": "TreeRexStore:build:development"
+              "browserTarget": "TeeRexStore:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "TreeRexStore:build"
+            "browserTarget": "TeeRexStore:build"
           }
         },
         "test": {

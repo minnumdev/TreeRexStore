@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './tree-rex-store/cart/cart.component';
-import { TreeRexStoreComponent } from './tree-rex-store/tree-rex-store.component';
+import { CartComponent } from './tee-rex-store/cart/cart.component';
+import { TeeRexStoreComponent } from './tee-rex-store/tee-rex-store.component';
 
 const routes: Routes = [{
   path : '',
-  component : TreeRexStoreComponent
+  component : TeeRexStoreComponent
 },
 {
-  path : 'tree-rex/cart',
+  path : 'tee-rex/cart',
   component : CartComponent
 }
 ];

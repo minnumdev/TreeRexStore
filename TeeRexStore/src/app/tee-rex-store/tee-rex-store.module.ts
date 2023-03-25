@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { TreeRexStoreRoutingModule } from './tree-rex-store-routing.module';
-import { TreeRexStoreComponent } from './tree-rex-store.component';
+import { TeeRexStoreRoutingModule } from './tee-rex-store-routing.module';
+import { TeeRexStoreComponent } from './tee-rex-store.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
@@ -27,14 +27,14 @@ import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   declarations: [
-    TreeRexStoreComponent,
+    TeeRexStoreComponent,
     CartComponent,
     ProductListComponent,
     FilterComponent
   ],
   imports: [
     CommonModule,
-    TreeRexStoreRoutingModule,
+    TeeRexStoreRoutingModule,
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
@@ -55,4 +55,4 @@ import {MatGridListModule} from '@angular/material/grid-list';
   ],
   exports:[FilterComponent]
 })
-export class TreeRexStoreModule { }
+export class TeeRexStoreModule { }

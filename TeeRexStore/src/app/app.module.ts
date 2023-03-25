@@ -1,4 +1,4 @@
-import { TreeRexStoreModule } from './tree-rex-store/tree-rex-store.module';
+import { TeeRexStoreModule } from './tee-rex-store/tee-rex-store.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -25,7 +25,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatIconModule,
     MatTooltipModule,
     MatBadgeModule,
-    TreeRexStoreModule,
+    TeeRexStoreModule,
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule

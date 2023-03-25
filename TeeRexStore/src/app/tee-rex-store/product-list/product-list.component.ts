@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TreeRexStoreService } from '../service/tree-rex-store.service';
+import { TeeRexStoreService } from '../service/tee-rex-store.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class ProductListComponent implements OnInit {
 
   public productList: any[] = [];
   constructor(
-    private _treeRex: TreeRexStoreService
+    private _treeRex: TeeRexStoreService
   ) { }
   ngOnInit(): void {
     this.list()
