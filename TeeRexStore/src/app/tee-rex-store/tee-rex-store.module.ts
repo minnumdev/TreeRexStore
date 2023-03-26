@@ -1,3 +1,4 @@
+import { SearchPipe } from './../shared/search.pipe';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -30,7 +31,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     TeeRexStoreComponent,
     CartComponent,
     ProductListComponent,
-    FilterComponent
+    FilterComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,

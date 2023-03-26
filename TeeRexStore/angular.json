@@ -30,7 +30,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/morestyles.css"       
             ],
             "scripts": []
           },
@@ -91,9 +92,11 @@
             "assets": [
               "src/favicon.ico",
               "src/assets"
-            ],
+            ], 
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/assets/css/morestyles.css"
+             
             ],
             "scripts": []
           }

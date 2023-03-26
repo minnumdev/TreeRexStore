@@ -24,6 +24,9 @@ export class HeaderComponent implements OnInit {
     this.searchForm = new FormGroup({
       searchValue: new FormControl('')
     })
+     this.searchForm.valueChanges.subscribe(data => {
+      this._treeRex.search.next(data.searchValue)}
+      )
    }
   
   cart() {

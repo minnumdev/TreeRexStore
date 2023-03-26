@@ -1,17 +1,15 @@
-<div fxFlex fxLayout="row" class="container">
+<div fxFlex fxLayout="row" class="container w">
     <div>
         <h2>TeeRex Store</h2>
     </div>
-    <div fxFlex="100" fxLayout="row" fxLayoutAlign="start center">
+    <div fxLayoutAlign="start center" class="wd">
         <form fxFlex fxLayoutAlign="start center" *ngIf="searchForm" [formGroup]="searchForm">
-            <div fxFlex>
-                <mat-form-field appearance="outline">
-                    <div>
-                        <input matInput placeholder="search for products" formControlName="searchValue" />
-                        <mat-icon>search</mat-icon> 
-                    </div>
-                </mat-form-field>
-            </div>
+            <mat-form-field appearance="outline" class="w d">
+                <div class="d w">
+                    <input matInput class="w" placeholder="search for products" formControlName="searchValue" />
+                    <mat-icon>search</mat-icon>
+                </div>
+            </mat-form-field>
         </form>
         <button mat-icon-button class="p" (click)="productList()" matTooltip="Go to products"><u>Products</u></button>
         <button mat-icon-button type="button" matBadge="8" matBadgePosition="before" matBadgeColor="accent"

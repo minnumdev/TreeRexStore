@@ -1,3 +1,4 @@
+import { SearchPipe } from './shared/search.pipe';
 import { TeeRexStoreModule } from './tee-rex-store/tee-rex-store.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -11,6 +12,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatBadgeModule} from '@angular/material/badge';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     TeeRexStoreModule,
     FormsModule,
     ReactiveFormsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
 
   ],
   providers: [],

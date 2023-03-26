@@ -1,0 +1,24 @@
+.w {
+  width: 100% !important;
+}
+.d {
+  display: flex !important;
+}
+.p-16 {
+  padding: 16px;
+}
+.p-8 {
+  padding: 8px;
+}
+.px-16 {
+  padding-left: 16px;
+}
+.py-16 {
+  padding-left: 16px;
+}
+.px-8 {
+  padding-left: 8px;
+}
+.py-8 {
+  padding-left: 8px;
+}

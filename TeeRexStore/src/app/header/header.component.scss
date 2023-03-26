@@ -1,7 +1,7 @@
 .container {
   background-color: #05063fe3;
   display: flex;
-  width: 100% !important;
+  // width: 100% !important;
   align-items: center;
   justify-content: space-between;
 }
@@ -27,4 +27,18 @@ button {
 .p {
   font-size: 24px;
   font-weight: bold;
+}
+
+.wd{
+  display: flex;
+  width: 550px !important;
+  align-items: center;
+  height: 36px;
+}
+
+form{
+  width:300px
+}
+.d{
+  display: flex;
 }

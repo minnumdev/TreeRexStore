@@ -13,7 +13,6 @@ export class TeeRexStoreComponent implements OnInit {
 
   ngOnInit(): void {
     this._treeRex.getItemList().subscribe(res=>{
-      console.log(res)
     })
   }
 
