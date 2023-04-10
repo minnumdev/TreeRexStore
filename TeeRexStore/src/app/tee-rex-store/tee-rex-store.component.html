@@ -1,8 +1,8 @@
 <div fxFlex fxLayout="row">
   <div fxFlex="20">
-    <app-filter class="filter"></app-filter>
+    <app-filter class="filter" [productList]="productList" ></app-filter>
   </div>
   <div fxFlex="80">
-    <app-product-list class="prod"></app-product-list>
+    <app-product-list class="prod" [productList]="productList" ></app-product-list>
   </div>
 </div>

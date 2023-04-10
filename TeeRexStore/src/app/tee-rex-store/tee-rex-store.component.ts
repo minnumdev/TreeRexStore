@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./tee-rex-store.component.scss']
 })
 export class TeeRexStoreComponent implements OnInit {
+  public productList !: any[];
   constructor(
     private _treeRex : TeeRexStoreService
   ) { }
@@ -14,6 +15,9 @@ export class TeeRexStoreComponent implements OnInit {
   ngOnInit(): void {
     this._treeRex.getItemList().subscribe(res=>{
     })
+    this._treeRex.productList.subscribe(res => {      
+      this.productList =  res;
+    });
   }
 
 }

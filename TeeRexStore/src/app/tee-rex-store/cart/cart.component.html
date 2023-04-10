@@ -1,1 +1,50 @@
-<p>cart works!</p>
+<div class="outer" *ngIf="cartList.length">    
+    <div class="cont1" *ngIf="cartList">
+        <h2>Shopping cart</h2>
+        <mat-divider></mat-divider>
+        <mat-list>
+            <mat-list-item *ngFor="let item of cartList; last as last">
+                <div class="container">
+                    <div class="img-cont">
+                        <img src={{item.imageURL}}>
+                    </div>
+                    <div class="p">
+                        <h3 [matTooltip]="item.name">{{item.name}}</h3>
+                        <h4>{{item.cPrice|currency:"INR":"symbol"}}</h4>
+                    </div>
+                    <div class="cp">
+                        <mat-form-field appearance="outline">
+                            <label><b>Qty :</b></label>
+                            <input matInput type="number" [max]="item.quantity" name="Qty" [min]="1"
+                                [ngModel]="item.cQty" (ngModelChange)="qtyChange($event,item)">
+                        </mat-form-field>
+                    </div>
+                    <button mat-raised-button color="accent" type="button" (click)="remove(item)">Remove</button>
+                </div>
+                <mat-divider [inset]="true" *ngIf="!last"></mat-divider>
+            </mat-list-item>
+        </mat-list>
+    </div>
+    <div class="cont2">
+        <h3>Price Details</h3>
+        <mat-divider></mat-divider>
+        <div fxFlex fxLayoutAlign="space-between">
+            <p>Price({{cartList.length}} items)
+            <p>
+            <p>{{total|currency:"INR":"symbol"}}</p>
+        </div>
+        <div fxFlex fxLayoutAlign="space-between">
+            <h3>Total Amount</h3>
+            <h3>{{total|currency:"INR":"symbol"}}</h3>
+        </div>
+    </div>
+</div>
+<div *ngIf="!cartList.length" class="empty">
+<div class="empty-cont">
+    <h3 class="cnt">Oops! Your cart is empty.</h3>
+    <div class="cnt"><mat-icon color="accent">production_quantity_limits</mat-icon></div>
+    <div class="cnt">
+        <button mat-raised-button type="button" [routerLink]="''" color="primary" >Shop</button>
+    </div>
+</div>
+</div>

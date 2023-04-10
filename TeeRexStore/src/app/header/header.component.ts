@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { TeeRexStoreService } from '../tee-rex-store/service/tee-rex-store.service';
@@ -10,7 +10,8 @@ import { TeeRexStoreService } from '../tee-rex-store/service/tee-rex-store.servi
 })
 export class HeaderComponent implements OnInit {
 
-  searchForm!:FormGroup
+  searchForm!: FormGroup
+  public cartCount: number = 0;
   constructor(
     private _route: Router,
     private _treeRex: TeeRexStoreService
@@ -18,20 +19,30 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.initialize()
-   }
+    this._treeRex.cartTotals.subscribe(res => {
+      if (res) {
+        this.cartCount = res.cnt;
+      }
+    })
+    if(!this.cartCount){
+      this.cartCount = JSON.parse(localStorage.getItem("totals")||'[]').cnt??0;
+    }
+  }
 
-   initialize(){
+  initialize() {
     this.searchForm = new FormGroup({
       searchValue: new FormControl('')
     })
-     this.searchForm.valueChanges.subscribe(data => {
-      this._treeRex.search.next(data.searchValue)}
-      )
-   }
-  
+    this.searchForm.valueChanges.subscribe(data => {
+      this._treeRex.search.next(data.searchValue)
+    }
+    )
+  }
+
   cart() {
     this._route.navigate(['/tee-rex/cart']);
   }
+
   productList() {
     this._route.navigate([''])
   }

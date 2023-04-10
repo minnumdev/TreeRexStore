@@ -1,0 +1,8 @@
+<div fxFlex fxLayout="column">
+    <h1 mat-dialog-title class="title">Confirm</h1>
+    <p mat-dialog-content>Are you sure to delete {{data}}?</p> 
+    <div mat-dialog-actions fxLayoutAlign="end center">
+        <button mat-raised-button color="accent" class="mr-1" (click)="cancel()">Close</button>
+        <button mat-raised-button color="primary" (click)="delete()">Ok</button>
+      </div>
+</div>
