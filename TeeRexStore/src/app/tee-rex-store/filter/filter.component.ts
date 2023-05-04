@@ -9,5 +9,6 @@ export class FilterComponent implements OnInit {
   constructor(){ }
   ngOnInit(): void {
   }
-
+  clearAll(){
+  }
 }
