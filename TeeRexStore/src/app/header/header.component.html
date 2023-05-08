@@ -1,6 +1,6 @@
 <div fxFlex fxLayout="row" class="container w">
     <div>
-        <h2>TeeRex Store</h2>
+        <h2 class="cl">TeeRex Store</h2>
     </div>
     <div fxLayoutAlign="start center" class="wd">
         <form fxFlex fxLayoutAlign="start center" *ngIf="searchForm" [formGroup]="searchForm">
@@ -11,10 +11,10 @@
                 </div>
             </mat-form-field>
         </form>
-        <button mat-icon-button class="p" (click)="productList()" matTooltip="Go to products"><u>Products</u></button>
-        <button mat-icon-button type="button" [matBadge]="cartCount ? cartCount : null" matBadgePosition="before" matBadgeColor="accent"
+        <button mat-icon-button type="button" class="p cl" (click)="productList()" matTooltip="Go to products">Products</button>
+        <button mat-button type="button" [matBadge]="cartCount ? cartCount : null" matBadgePosition="before" matBadgeColor="accent"
             matTooltip="Go to cart" (click)="cart()">
-            <mat-icon>
+            <mat-icon  class="cl">
                 shopping_cart
             </mat-icon>
         </button>
