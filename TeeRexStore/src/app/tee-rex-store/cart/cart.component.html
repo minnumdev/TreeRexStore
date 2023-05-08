@@ -1,6 +1,6 @@
 <div class="outer" *ngIf="cartList.length">    
     <div class="cont1" *ngIf="cartList">
-        <h2>Shopping cart</h2>
+        <h2 class="px">Shopping cart</h2>
         <mat-divider></mat-divider>
         <mat-list>
             <mat-list-item *ngFor="let item of cartList; last as last">
@@ -26,14 +26,14 @@
         </mat-list>
     </div>
     <div class="cont2">
-        <h3>Price Details</h3>
+        <h2 class="px">Price Details</h2>
         <mat-divider></mat-divider>
-        <div fxFlex fxLayoutAlign="space-between">
+        <div class="px" fxFlex fxLayoutAlign="space-between">
             <p>Price({{cartList.length}} items)
             <p>
             <p>{{total|currency:"INR":"symbol"}}</p>
         </div>
-        <div fxFlex fxLayoutAlign="space-between">
+        <div class="px" fxFlex fxLayoutAlign="space-between">
             <h3>Total Amount</h3>
             <h3>{{total|currency:"INR":"symbol"}}</h3>
         </div>

@@ -72,7 +72,7 @@ h3 {
   width: 100% !important;
   height: fit-content;
   background-color: white;
-  padding: 16px;
+  //padding: 16px;
 }
 
 .empty {
@@ -97,4 +97,7 @@ h3 {
     display: flex;
     justify-content: center;
     padding: 8px;
+}
+.px{
+  padding: 0px 16px;
 }
