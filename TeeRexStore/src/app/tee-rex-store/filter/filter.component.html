@@ -5,12 +5,26 @@
     </div>
     <div>
         <mat-card>
-            <mat-card-content class="p">
-                <h3>Color</h3>
-                <mat-checkbox>
-
-                </mat-checkbox>
+            <mat-card-content class="p" *ngFor="let item of filterVal[0]|keyvalue">
+                <h3>{{item.key}}</h3>
+                <div *ngFor="let val of $any(item).value">
+                    <mat-checkbox (change)="filterCheck(val,$event,item.key)">
+                        {{val}}
+                    </mat-checkbox>
+                </div>
             </mat-card-content>
+            <h3>Price</h3>
+            <div>
+                <p>Min: {{min}}</p>
+                <p>Max:{{max}}</p>
+            </div>
+            <mat-slider [min]="minValue" [max]="maxValue" [discrete]="true" [step]="50" >
+                <input [ngModel]="minValue" (input)="onSliderChange($event,'min')" matSliderStartThumb>
+                <input [ngModel]="maxValue" (input)="onSliderChange($event,'max')" matSliderEndThumb>
+            </mat-slider>
+            <!-- <div>{{maxValue|json}}
+                <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (input)="onSliderChange($event)"></ngx-slider>
+            </div> -->
         </mat-card>
     </div>
 </div>

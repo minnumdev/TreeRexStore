@@ -33,7 +33,8 @@ button {
   display: flex;
   width: 700px !important;
   align-items: center;
-  height: 36px;
+  //height: 36px;
+  justify-content: center;
 }
 
 form {

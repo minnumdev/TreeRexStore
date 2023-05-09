@@ -22,7 +22,12 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { CartComponent } from './cart/cart.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { FilterComponent } from './filter/filter.component';
-import {MatGridListModule} from '@angular/material/grid-list'; 
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatDividerModule} from '@angular/material/divider';
+import { FormRemoveItemComponent } from './form-remove-item/form-remove-item.component';  
+import {MatDialogModule} from '@angular/material/dialog'; 
+import {MatSliderModule} from '@angular/material/slider';
+import { NgxSliderModule } from '@angular-slider/ngx-slider';
 
 
 
@@ -32,7 +37,8 @@ import {MatGridListModule} from '@angular/material/grid-list';
     CartComponent,
     ProductListComponent,
     FilterComponent,
-    SearchPipe
+    SearchPipe,
+    FormRemoveItemComponent
   ],
   imports: [
     CommonModule,
@@ -53,7 +59,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
     BrowserAnimationsModule,
     MatListModule,
     FlexLayoutModule,
-    MatGridListModule    
+    MatGridListModule,
+    MatDividerModule,
+    MatDialogModule,
+    MatSliderModule,
+    NgxSliderModule
   ],
   exports:[FilterComponent]
 })

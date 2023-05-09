@@ -1,4 +1,6 @@
-<div fxFlex>
+
+<h3>{{productList.length}} Products</h3>
+<div fxFlex>    
     <div fxFlex fxLayout="row wrap" fxLayoutGap="20px grid">
         <div *ngFor="let item of productList | searchFilter: searchKey" fxFlex="25">
             <mat-card>
