@@ -1,7 +1,6 @@
 <div fxFlex>
     <div fxLayout="row" fxLayoutAlign="space-between center">
         <h2>Filters</h2>
-        <button mat-raised-button type="button" (click)="clearAll" color="accent">Clear All</button>
     </div>
     <div>
         <mat-card>
@@ -13,18 +12,15 @@
                     </mat-checkbox>
                 </div>
             </mat-card-content>
-            <h3>Price</h3>
-            <div>
+            <h3 class="m">Price</h3>
+            <div class="align">
                 <p>Min: {{min}}</p>
                 <p>Max:{{max}}</p>
             </div>
-            <mat-slider [min]="minValue" [max]="maxValue" [discrete]="true" [step]="50" >
+            <mat-slider class="mx" [min]="minValue" [max]="maxValue" [discrete]="true" [step]="50" >
                 <input [ngModel]="minValue" (input)="onSliderChange($event,'min')" matSliderStartThumb>
                 <input [ngModel]="maxValue" (input)="onSliderChange($event,'max')" matSliderEndThumb>
             </mat-slider>
-            <!-- <div>{{maxValue|json}}
-                <ngx-slider [(value)]="minValue" [(highValue)]="maxValue" [options]="options" (input)="onSliderChange($event)"></ngx-slider>
-            </div> -->
         </mat-card>
     </div>
 </div>

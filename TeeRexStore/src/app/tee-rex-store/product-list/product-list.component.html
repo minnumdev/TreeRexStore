@@ -1,6 +1,16 @@
 
-<h3>{{productList.length}} Products</h3>
-<div fxFlex>    
+<div >
+    <form  *ngIf="searchForm" [formGroup]="searchForm">
+        <mat-form-field appearance="outline">
+            <div>
+                <input matInput placeholder="search for products" formControlName="searchValue" />
+                <mat-icon>search</mat-icon>
+            </div>
+        </mat-form-field>
+    </form>
+</div>
+<h3 fxHide fxShow.gt-sm>{{productList.length}} Products</h3>
+<div fxHide fxShow.gt-sm fxFlex>    
     <div fxFlex fxLayout="row wrap" fxLayoutGap="20px grid">
         <div *ngFor="let item of productList | searchFilter: searchKey" fxFlex="25">
             <mat-card>

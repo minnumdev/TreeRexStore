@@ -37,10 +37,9 @@ export class TeeRexStoreService {
 
   public filteredProducts(arr: any) {
     //console.log('arr',arr,arr[3][0],arr[3][1]);
-    
-    const val = this.products.filter(x => (arr[0].includes(x.gender)|| arr[0].length === 0 ) &&  (arr[1].includes(x.color) || arr[1].length === 0)  && (arr[2].includes(x.type)|| arr[2].length === 0) && ((x.price >= arr[3][0] && x.price <= arr[3][1])) );
-    //console.log('val',val);
-    
+    console.log('val',this.products);
+    const val = arr.length ? this.products.filter(x => (arr[0].includes(x.gender)|| arr[0].length === 0 ) &&  (arr[1].includes(x.color) || arr[1].length === 0)  && (arr[2].includes(x.type)|| arr[2].length === 0) && ((x.price >= arr[3][0] && x.price <= arr[3][1]))) : this.products;
+    console.log('valaft',val);
     this.productList.next(val)
   }
 }

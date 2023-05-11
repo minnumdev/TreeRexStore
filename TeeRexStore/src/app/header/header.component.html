@@ -1,8 +1,8 @@
-<div fxFlex fxLayout="row" class="container w">
+<div fxFlex fxLayout="row" class="container w rcon">
     <div>
         <h2 class="cl">TeeRex Store</h2>
     </div>
-    <div fxLayoutAlign="start center" class="wd">
+    <div fxShow fxHide.lt-md fxLayoutAlign="start center" class="wd">
         <form fxFlex fxLayoutAlign="start center" *ngIf="searchForm" [formGroup]="searchForm">
             <mat-form-field appearance="outline" class="w d">
                 <div class="d w">
@@ -11,10 +11,19 @@
                 </div>
             </mat-form-field>
         </form>
-        <button mat-icon-button type="button" class="p cl" (click)="productList()" matTooltip="Go to products">Products</button>
-        <button mat-button type="button" [matBadge]="cartCount ? cartCount : null" matBadgePosition="before" matBadgeColor="accent"
-            matTooltip="Go to cart" (click)="cart()">
-            <mat-icon  class="cl">
+        <button mat-icon-button type="button" class="p cl" (click)="productList()"
+            matTooltip="Go to products">Products</button>
+        <button fxShow.lt-md mat-button type="button" [matBadge]="cartCount ? cartCount : null"
+            matBadgePosition="before" matBadgeColor="accent" matTooltip="Go to cart" (click)="cart()">
+            <mat-icon class="cl">
+                shopping_cart
+            </mat-icon>
+        </button>
+    </div>
+    <div fxHide fxShow.lt-md>
+        <button mat-button type="button" [matBadge]="cartCount ? cartCount : null" matBadgePosition="before"
+            matBadgeColor="accent" matTooltip="Go to cart" (click)="cart()">
+            <mat-icon class="cl">
                 shopping_cart
             </mat-icon>
         </button>

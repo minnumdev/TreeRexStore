@@ -1,12 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
-
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 // .w{
 //     display: flex;
 //     width:100% !important;
 // }
 
 body{
-    background-color: #f1f3f6;
+    background-color: #dce0e5;
 }
+

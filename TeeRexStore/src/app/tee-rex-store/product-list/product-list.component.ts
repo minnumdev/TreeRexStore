@@ -2,6 +2,7 @@ import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { TeeRexStoreService } from '../service/tee-rex-store.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-product-list',
@@ -11,6 +12,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class ProductListComponent implements OnInit {
 
   @Input() productList: any;
+  searchForm!:FormGroup;
   public searchKey: string = "";
   public cartListItem: any[] = [];
   constructor(
@@ -28,7 +30,16 @@ export class ProductListComponent implements OnInit {
       this._treeRex.cartItemCount(this.cartListItem);
     }
   }
-
+ 
+  initializeForm(){
+    this.searchForm = new FormGroup({
+      searchValue: new FormControl('')
+    });
+    this.searchForm.valueChanges.subscribe(res=>{
+      this.searchKey = res;
+    })
+  }
+  
   addToCart(item: any) {
     const val = this.cartListItem.find(x => x.id === item.id);
     if (!val) {

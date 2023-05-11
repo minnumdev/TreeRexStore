@@ -15,6 +15,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { NgxSliderModule } from '@angular-slider/ngx-slider';
+import { MatButtonModule } from '@angular/material/button';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { NgxSliderModule } from '@angular-slider/ngx-slider';
     MatFormFieldModule,
     MatInputModule,
     MatSnackBarModule,
-    NgxSliderModule
+    NgxSliderModule,
+    MatButtonModule,
+    FlexLayoutModule
 
   ],
   providers: [],

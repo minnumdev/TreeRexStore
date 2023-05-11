@@ -1,9 +1,5 @@
 import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
 import { TeeRexStoreService } from '../service/tee-rex-store.service';
-import { MatSliderChange, MatSliderDragEvent } from '@angular/material/slider';
-import { Options } from 'ng5-slider';
-import { LabelType } from '@angular-slider/ngx-slider';
-
 
 @Component({
   selector: 'app-filter',
@@ -66,8 +62,6 @@ export class FilterComponent implements OnInit {
   }
 
   filterCheck(val: any, event: any, key: any) {
-    console.log('event',event,val,key);
-    
     if (event?.checked) {
       if (key == "Gender" && !this.gender.includes(val)) {
         this.gender.push(val);
@@ -85,10 +79,6 @@ export class FilterComponent implements OnInit {
       this.type = key === "Type" ? this.type.filter(x => x != val) : this.type;
       console.log('type', this.type);
     }
-    
-    
     this._teeService.filteredProducts([this.gender, this.color, this.type, [this.min, this.max]])
-  }
-  clearAll(){
   }
 }

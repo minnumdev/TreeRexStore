@@ -59,7 +59,9 @@ form {
 :host ::ng-deep .mat-mdc-text-field-wrapper{
   height:36px !important;
 }
-
+.mat-mdc-form-field{
+  height:36px !important;
+}
 .cl{
   color: white;
 }
@@ -70,4 +72,13 @@ button{
 
 .ic{
   color:#202154 !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .rcon{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
