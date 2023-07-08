@@ -7,3 +7,8 @@
   width: 100% !important;
   background:rgba(252, 252, 252, 1) !important;
 }
+@media only screen and (max-width: 768px) {
+  .header{
+    height: 95px !important;
+  }
+}

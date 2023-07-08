@@ -1,18 +1,15 @@
 
-<div >
-    <form  *ngIf="searchForm" [formGroup]="searchForm">
-        <mat-form-field appearance="outline">
-            <div>
-                <input matInput placeholder="search for products" formControlName="searchValue" />
-                <mat-icon>search</mat-icon>
-            </div>
-        </mat-form-field>
-    </form>
+<div fxHide fxLayoutAlign="space-between center" class="mt" fxShow.lt-md>
+    <button mat-raised-button type="button" color="accent" (click)="products()"><small>Products</small>     
+    </button>
+    <button mat-icon-button type="button" (click)="filter()" class="pz">
+        <mat-icon class="fs" matTooltip="Filter">filter_alt</mat-icon>
+    </button>
 </div>
-<h3 fxHide fxShow.gt-sm>{{productList.length}} Products</h3>
-<div fxHide fxShow.gt-sm fxFlex>    
-    <div fxFlex fxLayout="row wrap" fxLayoutGap="20px grid">
-        <div *ngFor="let item of productList | searchFilter: searchKey" fxFlex="25">
+<h3 >{{productList.length}} Products</h3>
+<div  fxFlex>    
+    <div fxFlex fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="start start">
+        <div *ngFor="let item of productList | searchFilter: searchKey" fxFlex="25" fxFlex.lt-sm="100" fxFlex.lt-md="50">
             <mat-card>
                 <mat-card-content class="p">
                     <img src={{item.imageURL}}>

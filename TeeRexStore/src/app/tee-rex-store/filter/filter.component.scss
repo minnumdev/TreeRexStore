@@ -18,3 +18,8 @@ button{
 .m{
     margin:16px !important;
 }
+@media only screen and (max-width: 768px) {
+    :host{
+        margin-top:100px !important;
+    }
+}

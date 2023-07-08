@@ -11,6 +11,7 @@ export class TeeRexStoreService {
   public search = new BehaviorSubject<any>('');
   public productList = new BehaviorSubject<any>([]);
   public cartTotals = new BehaviorSubject<any>({});
+  setupTrigger = new BehaviorSubject({ title: '', search:true,cart:true,products:true});
 
   constructor(private http: HttpClient) { }
 
@@ -19,8 +20,12 @@ export class TeeRexStoreService {
       tap((response: any) => {
         this.products = response;
         this.productList.next(this.products)
-      })
-    );
+      })      
+    );    
+  }
+
+  setUpTopBar(title:string,search:boolean,cart:boolean,products:boolean){
+    this.setupTrigger.next({title:title,search:search,cart:cart,products:products});
   }
 
   public cartItemCount(cartItems: any) {
@@ -36,10 +41,7 @@ export class TeeRexStoreService {
   }
 
   public filteredProducts(arr: any) {
-    //console.log('arr',arr,arr[3][0],arr[3][1]);
-    console.log('val',this.products);
-    const val = arr.length ? this.products.filter(x => (arr[0].includes(x.gender)|| arr[0].length === 0 ) &&  (arr[1].includes(x.color) || arr[1].length === 0)  && (arr[2].includes(x.type)|| arr[2].length === 0) && ((x.price >= arr[3][0] && x.price <= arr[3][1]))) : this.products;
-    console.log('valaft',val);
+    const val = arr?.length ? this.products.filter(x => (arr[0].includes(x.gender)|| arr[0].length === 0 ) &&  (arr[1].includes(x.color) || arr[1].length === 0)  && (arr[2].includes(x.type)|| arr[2].length === 0) && ((x.price >= arr[3][0] && x.price <= arr[3][1])) ) : this.products;   
     this.productList.next(val)
   }
 }

@@ -2,16 +2,21 @@
   flex-direction: column;
   box-sizing: border-box;
   display: flex;
-  margin: 100px 24px 100px 16px;
-  top:72px !important;
-  position: absolute;
+  margin: 74px 24px 100px 16px;
+  top:16px !important;
+  //position: fixed;
 }
 .filter {
-  margin: 100px 16px 100px 24px;
+  margin: 74px 16px 100px 24px;
   position: absolute !important;
   //z-index: 10;
-  top:72px !important;
+  top:8px !important;
   width: 17%;
   box-sizing: border-box;
   display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .prod{
+    position:absolute;
+  }
 }

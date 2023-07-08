@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { TeeRexStoreService } from '../service/tee-rex-store.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
@@ -7,39 +7,39 @@ import { FormControl, FormGroup } from '@angular/forms';
 @Component({
   selector: 'app-product-list',
   templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.scss']
+  styleUrls: ['./product-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProductListComponent implements OnInit {
 
   @Input() productList: any;
-  searchForm!:FormGroup;
   public searchKey: string = "";
   public cartListItem: any[] = [];
   constructor(
-    private _treeRex: TeeRexStoreService,
+    private _teeRex: TeeRexStoreService,
     private _cd: ChangeDetectorRef,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private _route: Router
   ) { }
 
   ngOnInit(): void {
-    this._treeRex.search.subscribe(res => {
-      this.searchKey = res;
+    this._teeRex.setUpTopBar("",true, true, true);
+    const filterItems = JSON.parse(localStorage.getItem("filter")|| '[]') ?? null;
+     if(filterItems){
+      this._teeRex.filteredProducts([filterItems.gender, filterItems.color, filterItems.type, [filterItems.price[0], filterItems.price[1]]])
+     }    
+    this._teeRex.search.subscribe(res => {
+      if (res) {
+        this.searchKey = res;
+        this._cd.detectChanges();
+      }
     })
-    this.cartListItem = JSON.parse(localStorage.getItem("cartItems") || '[]')??[];
-    if(this.cartListItem.length){
-      this._treeRex.cartItemCount(this.cartListItem);
+    this.cartListItem = JSON.parse(localStorage.getItem("cartItems") || '[]') ?? [];
+    if (this.cartListItem.length) {
+      this._teeRex.cartItemCount(this.cartListItem);
     }
   }
- 
-  initializeForm(){
-    this.searchForm = new FormGroup({
-      searchValue: new FormControl('')
-    });
-    this.searchForm.valueChanges.subscribe(res=>{
-      this.searchKey = res;
-    })
-  }
-  
+
   addToCart(item: any) {
     const val = this.cartListItem.find(x => x.id === item.id);
     if (!val) {
@@ -48,13 +48,21 @@ export class ProductListComponent implements OnInit {
     } else {
       if (val.quantity >= val.cQty + 1) {
         val.cQty += 1
-        val.cPrice = val.price*val.cQty
+        val.cPrice = val.price * val.cQty
         this._snackBar.open("You have this item in your cart we have increased the quantity by 1!", "Ok", { duration: 1000 })
       } else {
         this._snackBar.open("You have this item in your cart with maximum available quantity!", "Ok", { duration: 1000 })
       }
     }
     localStorage.setItem("cartItems", JSON.stringify(this.cartListItem));
-    this._treeRex.cartItemCount(this.cartListItem);
+    this._teeRex.cartItemCount(this.cartListItem);
+  }
+
+  filter(){
+    this._route.navigate(['tee-rex/filter'])
+  }
+
+  products(){
+    this._teeRex.filteredProducts([])
   }
 }

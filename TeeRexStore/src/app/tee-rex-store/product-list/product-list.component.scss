@@ -7,10 +7,23 @@ img{
 }
 button{
     height: 28px !important;
+    //padding:0px !important;
 }
 .pl{
     padding-left: 8px !important;
 }
 mat-card{
     background-color: white;
+}
+.mat-mdc-card-content{
+    display:grid;
+}
+.fs{
+    font-size:28px !important;
+}
+.mt{
+    margin-top:16px !important;
+}
+.pz{
+    padding:0px
 }

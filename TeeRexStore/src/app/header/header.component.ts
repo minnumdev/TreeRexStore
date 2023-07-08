@@ -10,16 +10,19 @@ import { TeeRexStoreService } from '../tee-rex-store/service/tee-rex-store.servi
 })
 export class HeaderComponent implements OnInit {
 
-  searchForm!: FormGroup
+  searchForm!: FormGroup;
+  title!:string;;
+  data!:any;
   public cartCount: number = 0;
   constructor(
     private _route: Router,
-    private _treeRex: TeeRexStoreService
+    private _teeRex: TeeRexStoreService
   ) { }
 
   ngOnInit(): void {
     this.initialize()
-    this._treeRex.cartTotals.subscribe(res => {
+    this.initializeForm()
+    this._teeRex.cartTotals.subscribe(res => {
       if (res) {
         this.cartCount = res.cnt;
       }
@@ -29,17 +32,24 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  initialize() {
+  initialize(){
+    this._teeRex.setupTrigger.subscribe(res=>{
+      this.title = !res?.title?"TeeRexStore":res?.title;
+      this.data = res;
+    })
+  }
+
+  initializeForm() {
     this.searchForm = new FormGroup({
       searchValue: new FormControl('')
     })
     this.searchForm.valueChanges.subscribe(data => {
-      this._treeRex.search.next(data.searchValue)
+      this._teeRex.search.next(data.searchValue)
     }
     )
   }
 
-  cart() {
+  cartItem() {
     this._route.navigate(['/tee-rex/cart']);
   }
 

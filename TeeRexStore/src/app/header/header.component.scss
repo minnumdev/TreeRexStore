@@ -13,6 +13,7 @@ h2 {
 
 button {
   margin: 0px 16px;
+  width: auto !important;
 }
 
 .material-icons {
@@ -56,29 +57,45 @@ form {
   height: 100% !important;
 }
 
-:host ::ng-deep .mat-mdc-text-field-wrapper{
-  height:36px !important;
+:host ::ng-deep .mat-mdc-text-field-wrapper {
+  height: 36px !important;
 }
-.mat-mdc-form-field{
-  height:36px !important;
+.mat-mdc-form-field {
+  height: 36px !important;
 }
-.cl{
+.cl {
   color: white;
 }
 
-button{
-  width: auto !important;
-}
-
-.ic{
-  color:#202154 !important;
+.ic {
+  color: #202154 !important;
 }
 
 @media only screen and (max-width: 768px) {
-  .rcon{
+  .rcon {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
   }
+  .f {
+    font-size: 24px !important;
+  }
+  h2 {
+    font-size: 24px !important;
+  }
+}
+.mat-mdc-icon-button {
+  padding: 0px !important;
+  height: 24px !important;
+}
+.mt {
+  margin-top: 16px !important;
+}
+.mx {
+  display: flex;
+  justify-content: center !important;
+  width: 100% !important;
+  margin: 0px 16px 16px 16px !important;
+  min-width: -moz-available;
 }

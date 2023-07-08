@@ -1,5 +1,5 @@
 <div fxFlex>
-    <div fxLayout="row" fxLayoutAlign="space-between center">
+    <div fxShow fxHide.lt-md fxLayout="row" fxLayoutAlign="space-between center">
         <h2>Filters</h2>
     </div>
     <div>
@@ -21,6 +21,10 @@
                 <input [ngModel]="minValue" (input)="onSliderChange($event,'min')" matSliderStartThumb>
                 <input [ngModel]="maxValue" (input)="onSliderChange($event,'max')" matSliderEndThumb>
             </mat-slider>
-        </mat-card>
+            <div fxLayoutAlign="end center" class="m" fxHide fxShow.lt-md>
+                <button mat-raised-button type="button" color="accent" (click)="apply()">Apply         
+                </button>
+            </div>
+        </mat-card>      
     </div>
 </div>

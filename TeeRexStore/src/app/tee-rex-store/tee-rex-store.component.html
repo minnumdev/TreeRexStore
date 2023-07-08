@@ -1,8 +1,8 @@
 <div fxFlex fxLayout="row">
   <div fxHide fxShow.gt-sm fxFlex="20">
-    <app-filter class="filter" [productList]="productList" ></app-filter>
+    <app-filter *ngIf="productList" class="filter" [productList]="productList" ></app-filter>
   </div>
   <div fxFlex="80">
-    <app-product-list class="prod" [productList]="productList" ></app-product-list>
+    <app-product-list *ngIf="productList" class="prod" [productList]="productList" ></app-product-list>
   </div>
 </div>

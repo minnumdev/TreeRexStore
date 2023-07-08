@@ -12,14 +12,15 @@ export class CartComponent implements OnInit {
   public cartList: any[] = [];
   public total !: any;
   constructor(
-    private _treeRex: TeeRexStoreService,
+    private _teeRex: TeeRexStoreService,
     private dialog: MatDialog,
   ) { }
 
   ngOnInit() {
+    this._teeRex.setUpTopBar("",true, false, true);
     this.cartList = JSON.parse(localStorage.getItem("cartItems") || '[]') ?? [];
     if (this.cartList.length) {
-      this._treeRex.cartTotals.subscribe(res => {
+      this._teeRex.cartTotals.subscribe(res => {
         if (res) {
           this.total = res.total;
         }
@@ -39,7 +40,7 @@ export class CartComponent implements OnInit {
       return x;
     })
     localStorage.setItem("cartItems", JSON.stringify(this.cartList));
-    this._treeRex.cartItemCount(this.cartList);
+    this._teeRex.cartItemCount(this.cartList);
   }
 
   remove(item:any){
@@ -52,7 +53,7 @@ export class CartComponent implements OnInit {
       if(res){
         this.cartList.splice(this.cartList.findIndex(x=>x.id===item.id),1);
         localStorage.setItem("cartItems", JSON.stringify(this.cartList)); 
-        this._treeRex.cartItemCount(this.cartList); 
+        this._teeRex.cartItemCount(this.cartList); 
       }
     }) 
   }

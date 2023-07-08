@@ -101,3 +101,11 @@ h3 {
 .px{
   padding: 0px 16px;
 }
+.list {
+  &:nth-child(odd) {
+    background-color: aliceblue;
+  }
+  &:nth-child(even) {
+    background-color:#fff;
+  }
+}
