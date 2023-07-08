@@ -27,7 +27,8 @@ export class ProductListComponent implements OnInit {
     const filterItems = JSON.parse(localStorage.getItem("filter")|| '[]') ?? null;
      if(filterItems){
       this._teeRex.filteredProducts([filterItems.gender, filterItems.color, filterItems.type, [filterItems.price[0], filterItems.price[1]]])
-     }    
+      localStorage.removeItem("filter"); 
+    }    
     this._teeRex.search.subscribe(res => {
       if (res) {
         this.searchKey = res;
