@@ -24,8 +24,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this._teeRex.setUpTopBar("",true, true, true);
-    const filterItems = JSON.parse(localStorage.getItem("filter")|| '[]') ?? null;
-     if(filterItems){
+    const filterItems = JSON.parse(localStorage.getItem("filter") || '{}') ?? null;
+     if(filterItems.price){
       this._teeRex.filteredProducts([filterItems.gender, filterItems.color, filterItems.type, [filterItems.price[0], filterItems.price[1]]])
       localStorage.removeItem("filter"); 
     }    
